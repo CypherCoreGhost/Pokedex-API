@@ -1,0 +1,34 @@
+openapi: 3.0.3
+info:
+  title: Pokédex API
+  description: A simple Pokédex API built for learning and practice.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:8000
+
+paths:
+  /api/signin:
+    get:
+      summary: signin user
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              example:
+                - status_code: 201
+                  token: exampletokenasdoimn10m309nasd
+
+  /pokemon/{id}:
+    get:
+      summary: Get Pokémon by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Pokémon found
